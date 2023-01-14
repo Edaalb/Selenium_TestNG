@@ -14,7 +14,6 @@ public class C02_DependsOnMethods {
     //başka bir teste bağlı olan testi tek başına çalıştıramayız
 
     //bağlı olunan test failed olursa diğeri ignore edilir, hiç çalıştırılmayı denemez
-""
     @Test(priority = -3)
     public void ilkTest(){
         System.out.println("Ilk test calisti");
