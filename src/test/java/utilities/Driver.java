@@ -18,46 +18,19 @@ public class Driver {
        access modifier'ini PRIVATE yapmamiz yeterli olur.
      */
 
-    private Driver(){
-
-    }
-
     static WebDriver driver;
 
     public static WebDriver getDriver(){
 
-        String browser= ConfigReader.getProperty("browser");
-        if(driver==null) {
-
-            switch (browser) {
-
-                case "chrome":
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
-                    break;
-
-                case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
-                    driver=new FirefoxDriver();
-                    break;
-
-                case "safari" :
-                    WebDriverManager.safaridriver().setup();
-                    driver= new SafariDriver();
-                    break;
-
-                default:
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
-
-            }
-
-
-            driver.manage().window().maximize();
+        if (driver==null) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+            driver.manage().window().maximize();
         }
 
         return driver;
+
 
     }
 
@@ -68,12 +41,13 @@ public class Driver {
             driver=null;
         }
 
-    }
 
-    public static void quitDriver(){
-        if (driver != null){
+    }
+    public static void quitDriver() {
+        if (driver != null) {
             driver.quit();
-            driver=null;
+            driver = null;
         }
+
     }
 }

@@ -46,7 +46,12 @@ public class C02_SoftAssert {
         // "Mexico (peso)","Norway (krone)","New Zealand (dollar)","Sweden (krona)","Singapore (dollar)",
         // "Thailand (baht)"
 
-        List<WebElement> optionsElementListesi= select.getOptions();
+        List<WebElement> optionsElementListesi= select.getOptions(); //web elementlerden oluşan bir liste getirir
+        //ancak soruda Stringler'den oluşan bir liste var
+        //bu yüzden önce bunları list olarak oluşturmak gerekiyored
+
+        //expect listeyi oluştururuz, ve web elementleri string liste haline döndürürüz
+
         List<String> actualOptionsListesiStr= new ArrayList<>();
 
         for (WebElement each: optionsElementListesi
@@ -56,6 +61,7 @@ public class C02_SoftAssert {
         String[] arr={"Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)","Hong Kong (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)","Sweden (krona)","Singapore (dollar)","Thailand (baht)"};
         List<String> expectedOptionsListesi= Arrays.asList(arr);
 
+        //listelerde sıralama farklı olursa problem olabilir bu yüzden sort yaparız
         Collections.sort(actualOptionsListesiStr);
         Collections.sort(expectedOptionsListesi);
 
