@@ -6,6 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class QualitydemyPage {
+
+    //bir page sayfası oluşturduğumuzda ilk yapmamız gereken şey parametresiz
+    // bir constructor oluşturmak ve pagefactory
     public QualitydemyPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
