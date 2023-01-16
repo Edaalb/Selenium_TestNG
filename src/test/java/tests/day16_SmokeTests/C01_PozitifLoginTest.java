@@ -22,6 +22,7 @@ public class C01_PozitifLoginTest {
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
 
         QualitydemyPage qualitydemyPage= new QualitydemyPage();
+        qualitydemyPage.cookiesAccept.click();
         qualitydemyPage.ilkLoginLinki.click();
 
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));

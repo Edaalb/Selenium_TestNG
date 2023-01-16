@@ -21,6 +21,7 @@ public class C02_NegetifLoginTesti {
     public void yanlisEmailTesti(){
 
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+        qualitydemyPage.cookiesAccept.click();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
@@ -36,6 +37,7 @@ public class C02_NegetifLoginTesti {
     public void yanlisPasswordTesti(){
         qualitydemyPage= new QualitydemyPage();
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+        qualitydemyPage.cookiesAccept.click();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
@@ -53,6 +55,7 @@ public class C02_NegetifLoginTesti {
 
         qualitydemyPage= new QualitydemyPage();
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+        qualitydemyPage.cookiesAccept.click();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
@@ -61,7 +64,7 @@ public class C02_NegetifLoginTesti {
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
 
         ReusableMethods.bekle(3);
-        Driver.closeDriver();
+        Driver.quitDriver();
     }
 
 }
