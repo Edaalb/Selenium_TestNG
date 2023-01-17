@@ -35,7 +35,6 @@ public class TestBaseRapor {
         extentHtmlReporter.config().setReportName("TestNG Reports");
     }
 
-
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
@@ -51,7 +50,6 @@ public class TestBaseRapor {
         Driver.closeDriver();
 
     }
-
 
     // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)

@@ -18,12 +18,13 @@ public class C01_HTML_Reports extends TestBaseRapor {
         // amazona gidelim
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
         extentTest.info("Amazon anasayfaya gidildi");
+
         // Nutella aratalim
         AmazonPage amazonPage= new AmazonPage();
         amazonPage.amazonAramaKutusu.sendKeys("Nutella" + Keys.ENTER);
         extentTest.info("Arama kutusuna Nutella yazip, arama yapildi");
-        // sonuclarin nutella icersigini test edelim
 
+        // sonuclarin nutella icersigini test edelim
         String actualSonucYazisi= amazonPage.aramaSonucuElementi.getText();
         String expectedKelime= "Nutella";
         extentTest.info("Arama sonuclari kaydedildi");

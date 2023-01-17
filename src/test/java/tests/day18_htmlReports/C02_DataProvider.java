@@ -10,14 +10,14 @@ import utilities.Driver;
 
 public class C02_DataProvider {
     @DataProvider
-    public static Object[][] AmazonAranacakKelimeler() {
+    public static Object[][] AmazonAranacakKelimeler() { //otomatik oluşacak
         /*
             @DataProvider istedigimiz test method'una test datasi saglamak icin kullanilir
-            sadece bir sdarti vardir
+            sadece bir sarti vardir
             iki katli bir Object array'i dondurmelidir
          */
 
-        Object[][] amazonAranacakKelimelerArrayi=
+        Object[][] amazonAranacakKelimelerArrayi=  //çift katlı array
                 {{"Nutella"}, {"Java"}, {"Apple"}, {"Samsung"}, {"armut"}};
 
         return amazonAranacakKelimelerArrayi;
@@ -28,7 +28,9 @@ public class C02_DataProvider {
     // sonuclarin bu kelimeleri icerdigini test edelim
 
 
-    @Test(dataProvider = "AmazonAranacakKelimeler")
+    @Test(dataProvider = "AmazonAranacakKelimeler") //sağ click ile oluştururuz.
+                                                    // yukarıda otomatik kendi oluşur
+
     public void aramaTesti(String aranacakKelime){
 
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
@@ -42,5 +44,6 @@ public class C02_DataProvider {
         Assert.assertTrue(actualSonucYazisi.contains(aranacakKelime));
 
         Driver.closeDriver();
+
     }
 }
