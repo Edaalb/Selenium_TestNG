@@ -12,7 +12,6 @@ public class CrossDriver {
         // Driver class'indan obje olusturmayi engellemek icin bu cons.'i olusturduk
     }
 
-
     static WebDriver driver;
     public static WebDriver getDriver(String browser){
 
@@ -20,7 +19,6 @@ public class CrossDriver {
 
         if(driver==null) {// method ilk cagrildiginda driver degeri atanmamis oldugundan deger ata
             // sonraki calistirmalarda degeri atanmis oldugundan 18.satir calismayacak
-
 
 
             switch (browser){
